@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>NLCSN</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    {% load static %}
+    <!-- <link rel="stylesheet" href="{% static 'style.css'%}"> -->
+    <!-- <link rel="stylesheet" href="{% static '/themify-icons/themify-icons.css'%}"> -->
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .content{
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            /* background-position: center; */
+            /* background-repeat: no-repeat; */
+            /* background-size: contain;
+            background-color: #ccc; */
+        }
+
+        .wrapper{
+            width: 840px;
+            background: #f2efef;
+            margin-top: 120px;
+            margin-bottom: 200px;
+            border-radius: 5px;
+            padding: 25px 25px 60px;
+            position: relative;
+        }
+
+        .wrapper h2{
+            color: #4671EA;
+            font-size: 28px;
+            text-align: center;
+
+        }
+        .wrapper .show_content{
+            /* border:1px solid #4671EA; */
+            min-width: 800px;
+            padding: 15px;
+            border-radius: 5px;
+            outline: none;
+            resize: none;
+            margin-top: 20px;
+            font-size: 16px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="wrapper">
+          <h2> Client</h2>
+          <div  class="show_content">
+                <form action="{% url 'polls:index' %}" method="post">
+                    <div class="form-group">
+                    <label for="exampleInputEmail1">Age</label>
+                        {{f.age}}
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">job</label>
+                        {{f.job}}
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Marital</label>
+                        {{f.marital}}
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Education</label>
+                        {{f.education}}
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Housing</label>
+                        {{f.housing}}
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Loan</label>
+                        {{f.loan}}
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Campaign</label>
+                        {{f.campaign}}
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Previous</label>
+                        {{f.previous}}
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Poutcome</label>
+                        {{f.poutcome}}
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Emp.var.rate</label>
+                        {{f.empvarrate}}
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">cons.price.idx</label>
+                        {{f.conspriceidx}}
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Cons.conf.idx</label>
+                        {{f.consconfidx}}
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Euribor3m</label>
+                        {{f.euribor3m}}
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Nr.employed</label>
+                        {{f.nremployed}}
+                    </div>
+                    {% if l.label != None %}
+                        <h5>Nhãn dự đoán: {{l.label}}</h5>
+                        <!-- <h3>kiệt</h3> -->
+                    {% endif %}
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</html>
